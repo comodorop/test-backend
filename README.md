@@ -29,6 +29,16 @@
 |  8  | 5444        |   123      | $900  | 2019-03-14 13:32:16 |
 
 
+RESPUESTA:
+```
+SELECT YEAR(birthday) year, MONTH(birthday) month, SUM(price) total
+FROM koa.`user` WHERE YEAR(birthday) = '2019';
+
+
+SELECT YEAR(birthday) year, MONTH(birthday) month, SUM(price) total
+FROM koa.`user` WHERE MONTH(birthday) = '07';
+```
+
 Ouput example:
 
 | year | month | reservation | total |
@@ -45,3 +55,21 @@ Ouput example:
 ```throw new Error('something bad happened');```
 
 ```callback(new Error('something bad happened'));```
+
+RESPUESTA
+```
+El callback regresa un error donde el receptor tendria que validar si existe el error example 
+
+if(err){
+  console.log('There is a problem')
+}
+
+A dirferencia del throw que permite lanzar los errores y permite cacharlos mediante el try y catch y evitar de estar validando si exite errores.
+
+try{
+
+}catch(err){
+
+}
+
+```
